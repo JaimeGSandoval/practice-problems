@@ -12,4 +12,7 @@ function phAnalyzer(str) {
   }
 }
 
-phAnalyzer('123')
+phAnalyzer('1');
+phAnalyzer('7');
+phAnalyzer('11');
+phAnalyzer('42');
