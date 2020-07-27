@@ -2,13 +2,13 @@
 function phAnalyzer(str) {
   var num = Number(str);
   if (num >= 0 && num <= 4) {
-    console.log('acidic');
+    return 'acidic';
   } else if (num >= 5 && num <= 8) {
-    console.log('neutral');
+    return 'neutral';
   } else if (num >= 9 && num <= 14) {
-    console.log('alkaline');
+    return 'alkaline';
   } else {
-    console.log('invalid pH value')
+    return 'invalid pH value';
   }
 }
 
