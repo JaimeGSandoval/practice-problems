@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    function getWordCount(str) {
+      var strArr = Array.from(str);
+      var wordTotal = 1;
+
+      for (var i = 0; i < strArr.length; i++) {
+        if (strArr[i] === ' ') {
+          wordTotal++;
+        }
+      }
+      return wordTotal;
+    }
+
+
+    function getWordCount2(str) {
+      var strArr = str.split(' ');
+      var count = strArr.length;
+      return count;
+    }
+
+    getWordCount('Hello my name is Jaime');
+    getWordCount('I am hungry right now');
+    getWordCount('I need more coffee in my system');
+
+    getWordCount2('Hello my name is Jaime');
+    getWordCount2('I am hungry right now');
+    getWordCount2('I need more coffee in my system');
+
+
+  </script>
+</body>
+
+</html>
