@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+    // commented out lines are my code. Uncommented are Cody's lines
+    function createRepeatingLetters(word, numOfRepeats) {
+      // var newWord = [];
+      // var lettersSplit = word.split('');
+      var result = '';
+      for (var i = 0; i < word.length; i++) {
+        for (var j = 0; j < numOfRepeats; j++) {
+          // newWord.push(lettersSplit);
+          result += word[i];
+        }
+      }
+      return result;
+      // return newWord.join('');
+    }
+
+    createRepeatingLetters('gnarley', 3);
+    createRepeatingLetters('cowabunga', 2);
+    createRepeatingLetters('coding', 4);
+  </script>
+</body>
+
+</html>
