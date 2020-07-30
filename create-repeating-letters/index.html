@@ -12,16 +12,19 @@
 
   <script>
 
-    // It's not the best solution, but it's all I could think of ::(
+    // commented out lines are my code. Uncommented are Cody's lines
     function createRepeatingLetters(word, numOfRepeats) {
-      var newWord = [];
-      var lettersSplit = word.split('');
-      for (var i = 0; i < lettersSplit.length; i++) {
+      // var newWord = [];
+      // var lettersSplit = word.split('');
+      var result = '';
+      for (var i = 0; i < word.length; i++) {
         for (var j = 0; j < numOfRepeats; j++) {
-          newWord.push(lettersSplit[i]);
+          // newWord.push(lettersSplit);
+          result += word[i];
         }
       }
-      return newWord.join('');
+      return result;
+      // return newWord.join('');
     }
 
     createRepeatingLetters('gnarley', 3);
