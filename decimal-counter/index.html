@@ -15,19 +15,20 @@
 
     // my "solution". Couldn't figure it out. Shouldn't have used arrays
     // I knew I had to work backwards from the end of the string, but the condition logic in my for loop was wrong
-    function decimalCounter(stringNumber) {
-      var newArr = [];
-      for (var i = stringNumber.length - 1; i > 0; i--) {
-        var result = [];
-        if (stringNumber[i] === '.') {
-          return;
-        }
-        result.push(stringNumber[i]);
+    // function decimalCounter(stringNumber) {
 
-      }
+    //   var newArr = [];
+    //   for (var i = stringNumber.length - 1; i > 0; i--) {
+    //     var result = [];
+    //     if (stringNumber[i] === '.') {
+    //       return;
+    //     }
+    //     result.push(stringNumber[i]);
 
-      console.log(result.length);
-    }
+    //   }
+
+    //   console.log(result.length);
+    // }
 
 
 
@@ -42,12 +43,17 @@
       }
       return 0;
     }
-
     console.log(decimalCounter2('45.334'));
 
 
-
-
+    function decimalCounter3(stringNumber) {
+      var numSplitArray = stringNumber.split('.');
+      if (numSplitArray[1]) {
+        return numSplitArray[1].length;
+      }
+      return 0;
+    }
+    console.log(decimalCounter3('45.33455'));
   </script>
 </body>
 
