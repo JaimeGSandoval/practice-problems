@@ -5,83 +5,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
-  <style>
-    tbody tr:nth-of-type(odd) {
-      background-color: gray;
-    }
-  </style>
 </head>
 
 <body>
-
-  <input type="text">
-  <table border='1'>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-
-    <tbody>
-      <tr>
-        <td>Sleep</td>
-        <td>
-          This is a description
-        </td>
-      </tr>
-      <tr>
-      </tr>
-    </tbody>
-    </thead>
-  </table>
 
 
 
   <script>
 
-    var inputText = document.querySelector('input');
-
-    console.log(inputText.value);
-
-
-    function addTableRow() {
-      var tableHeadArr = [];
-      tableHeadArr.push(inputText.value);
-
-      for (var i = 0; i < tableHeadArr.length; i++) {
-        var tableBody = document.querySelector('tbody');
-        var tableRow = document.createElement('tr');
-        var tableCellTitle = document.createElement('td');
-        var tableCellText = document.createElement('td');
-        tableCellTitle.innerText = inputText.value;
-        tableCellText.innerText = textDescription;
-        tableRow.append(tableCellTitle, tableCellText);
-        tableBody.append(tableRow);
-
+    function isTheAverageWhole(numbersArray) {
+      var sum = 0
+      var answer = null;
+      for (var i = 0; i < numbersArray.length; i++) {
+        sum += numbersArray[i];
       }
+
+      answer = sum / numbersArray.length;
+      // return answer % 1 === 0;
+      return Number.isInteger(answer);
 
     }
 
-    addTableRow();
-
-
-    // function isTheAverageWhole(numbersArray) {
-    //   var sum = 0
-    //   var answer = null;
-    //   for (var i = 0; i < numbersArray.length; i++) {
-    //     sum += numbersArray[i];
-    //   }
-
-    //   answer = sum / numbersArray.length;
-    //   // return answer % 1 === 0;
-    //   return Number.isInteger(answer);
-
-    // }
-
-    // isTheAverageWhole([1, 3, 4, 4]);
-    // isTheAverageWhole([3, 4]);
-    // isTheAverageWhole([5, 5, 5]);
+    isTheAverageWhole([1, 3, 4, 4]);
+    isTheAverageWhole([3, 4]);
+    isTheAverageWhole([5, 5, 5]);
   </script>
 </body>
 
