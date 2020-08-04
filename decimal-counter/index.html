@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+
+    // my "solution". Couldn't figure it out. Shouldn't have used arrays
+    // I knew I had to work backwards from the end of the string, but the condition logic in my for loop was wrong
+    // function decimalCounter(stringNumber) {
+
+    //   var newArr = [];
+    //   for (var i = stringNumber.length - 1; i > 0; i--) {
+    //     var result = [];
+    //     if (stringNumber[i] === '.') {
+    //       return;
+    //     }
+    //     result.push(stringNumber[i]);
+
+    //   }
+
+    //   console.log(result.length);
+    // }
+
+
+
+    // cody's solution
+    function decimalCounter2(stringNumber) {
+      var counter = 0;
+      for (var i = stringNumber.length - 1; i > 0; i--) {
+        if (stringNumber[i] === '.') {
+          return counter;
+        }
+        counter++
+      }
+      return 0;
+    }
+    console.log(decimalCounter2('45.334'));
+
+
+    function decimalCounter3(stringNumber) {
+      var numSplitArray = stringNumber.split('.');
+      if (numSplitArray[1]) {
+        return numSplitArray[1].length;
+      }
+      return 0;
+    }
+    console.log(decimalCounter3('45.33455'));
+  </script>
+</body>
+
+</html>
