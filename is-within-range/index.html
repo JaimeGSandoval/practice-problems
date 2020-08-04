@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    //  Define a function named isWithinRange which takes in a number and an object literal with min and max properties as arguments.The function returns true if the given number falls within the given min and max, and false if it does not.
+
+    /*
+       1. use number value in condition
+       2. place min and max values in conditional
+       3. Check to see if the number is between the min and max on one line and return true or false
+    */
+
+
+    function isWithinRange(number, { min, max }) {
+      return number >= min && number <= max;
+
+    }
+
+
+    isWithinRange(5, { min: 1, max: 9 })      // -> true
+    isWithinRange(12, { min: 15, max: 29 })     // -> false
+    isWithinRange(9, { min: 0, max: 9 })
+
+
+
+
+  </script>
+</body>
+
+</html>
