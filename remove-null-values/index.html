@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+
+    // an array which contains all of the values from the array argument except for any null values
+    function removeNullValues(array) {
+      var truthyArr = [];
+
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] !== null) {
+          truthyArr.push(array[i]);
+        }
+      }
+      return truthyArr;
+    }
+
+    removeNullValues([3, 5, null, null, 87, "hello", "goodbye"]) // -> [3,5,87,"hello", "goodbye"]
+    removeNullValues([true, null, false, {}, null, 43, "node"]) // -> [true, false, {}, 43, "node"]
+    removeNullValues([null, null, null, 7, null, "eight"]) // -> [7, "eight"]
+
+  </script>
+</body>
+
+</html>
