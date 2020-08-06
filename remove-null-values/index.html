@@ -16,9 +16,12 @@
       var truthyArr = [];
 
       for (var i = 0; i < array.length; i++) {
-        if (array[i] !== null) {
+        if (array[i]) {
           truthyArr.push(array[i]);
         }
+        // if (array[i] !== null) {
+        //   truthyArr.push(array[i]);
+        // }
       }
       return truthyArr;
     }
