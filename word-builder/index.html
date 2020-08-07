@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+  <script>
+
+    // Define a function named wordBuilder which takes in a string word as an argument and returns an array in which the word is spelled out by adding a letter for each index until the word is completed
+
+    function wordBuilder(wordToSpell) {
+      var strArr = '';
+      var wordArr = [];
+      for (var i = 0; i < wordToSpell.length; i++) {
+        strArr += wordToSpell[i];
+        wordArr.push(strArr);
+      }
+      return wordArr;
+    }
+
+
+    wordBuilder("JavaScript") // -> ["J", "Ja", "Jav", "Java", "JavaS", "JavaSc", "JavaScr", "JavaScri", "JavaScrip", "JavaScript"]
+    wordBuilder("Moon") // -> ["M", "Mo", "Moo", "Moon"]
+    wordBuilder("Stars") // -> ["S", "St", "Sta", "Star", "Stars"]
+  </script>
+</body>
+
+</html>
