@@ -12,22 +12,22 @@
   <script>
     // Define a function named freeCoffeeCups which takes in the number of coffee cups bought by a customer and adds a free cup for every 6 cups the customer has bought.
 
-    // function freeCoffeeCups(cups) {
-    //   var freeCups = null;
-    //   for (var i = 0; i <= cups; i++) {
-    //     if (i % 6 === 0 && i) {
-    //       freeCups++;
-    //     }
-    //   }
-    //   return cups + freeCups;
-    // }
-
-
-
     function freeCoffeeCups(cups) {
-      var freeCups = Math.floor(cups / 6);
+      var freeCups = null;
+      for (var i = 0; i <= cups; i++) {
+        if (i % 6 === 0 && i) {
+          freeCups++;
+        }
+      }
       return cups + freeCups;
     }
+
+
+
+    // function freeCoffeeCups(cups) {
+    //   var freeCups = Math.floor(cups / 6);
+    //   return cups + freeCups;
+    // }
 
     freeCoffeeCups(13) // -> 15
     freeCoffeeCups(6) // -> 7
