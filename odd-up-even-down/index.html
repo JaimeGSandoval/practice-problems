@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    // Define a function named oddUpEvenDown which takes in an array of numeric values and increments any odd values by 1, and decrements any even values by 1
+
+    function oddUpEvenDown(array) {
+      var resultArr = [];
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] % 2 === 0) {
+          array[i]--;
+          resultArr.push(array[i]);
+        } else {
+          array[i]++;
+          resultArr.push(array[i]);
+        }
+      }
+      return resultArr;
+    }
+
+    oddUpEvenDown([1, 2, 3, 4, 5]) // -> [2, 1, 4, 3, 6]
+    oddUpEvenDown([23, 15, 18, 14, 32]) // -> [24, 16, 17, 13, 31]
+    oddUpEvenDown([72, 212, 77, 124, 53]) // -> [71, 211, 78, 123, 54]
+  </script>
+</body>
+
+</html>
