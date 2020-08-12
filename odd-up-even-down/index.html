@@ -18,11 +18,10 @@
       for (var i = 0; i < array.length; i++) {
         if (array[i] % 2 === 0) {
           array[i]--;
-          resultArr.push(array[i]);
         } else {
           array[i]++;
-          resultArr.push(array[i]);
         }
+        resultArr.push(array[i]);
       }
       return resultArr;
     }
