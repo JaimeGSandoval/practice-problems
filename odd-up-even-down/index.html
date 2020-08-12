@@ -13,15 +13,29 @@
 
     // Define a function named oddUpEvenDown which takes in an array of numeric values and increments any odd values by 1, and decrements any even values by 1
 
+    // function oddUpEvenDown(array) {
+    //   var resultArr = [];
+    //   for (var i = 0; i < array.length; i++) {
+    //     if (array[i] % 2 === 0) {
+    //       array[i]--;
+    //     } else {
+    //       array[i]++;
+    //     }
+    //     resultArr.push(array[i]);
+    //   }
+    //   return resultArr;
+    // }
+
+
+    // Better way to do it. The increment and decrement will  mutate the original values in the array. This way doesn't alter the original array
     function oddUpEvenDown(array) {
       var resultArr = [];
       for (var i = 0; i < array.length; i++) {
         if (array[i] % 2 === 0) {
-          array[i]--;
+          resultArr.push(array[i] - 1);
         } else {
-          array[i]++;
+          resultArr.push(array[i] + 1);
         }
-        resultArr.push(array[i]);
       }
       return resultArr;
     }
