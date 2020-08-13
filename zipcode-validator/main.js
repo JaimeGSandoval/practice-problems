@@ -14,8 +14,8 @@ function zipCodeValidator(str) {
 
     for (var i = 0; i < str.length; i++) {
       if (str[i] !== ' ') {
-        var num = null;
-        num = parseInt(str[i]);
+        var num = parseInt(str[i]);
+        // num = parseInt(str[i]);
         numArr.push(num)
       }
     }
@@ -23,6 +23,10 @@ function zipCodeValidator(str) {
   return numArr.length === 5;
 }
 
+// Cody's better solution
+// function zipCodeValidator(zipToValidate) {
+//   return !isNaN(zipCodeValidator) && zipToValidate.length === 5;
+// }
 
 
 zipCodeValidator("21594") // -> true
