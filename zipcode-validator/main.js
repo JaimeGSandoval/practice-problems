@@ -15,7 +15,6 @@ function zipCodeValidator(str) {
     for (var i = 0; i < str.length; i++) {
       if (str[i] !== ' ') {
         var num = parseInt(str[i]);
-        // num = parseInt(str[i]);
         numArr.push(num)
       }
     }
