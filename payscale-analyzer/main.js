@@ -1,6 +1,24 @@
 // Define a function named payscaleAnalyzer which takes in an array of hourly wages and returns the numeric difference between the highest and lowest wages
 
 
+//Couldn't get this way to work
+// function payScaleAnalyzer(payList) {
+//   var highest = payList[0];
+//   var lowest = payList[0];
+//   for (var i = 0; i < payList.length; i++) {
+//     if (payList[i] > highest) {
+//       payList[i] = highest;
+//     }
+//   }
+//   for (var x = 0; x < payList.length; x++) {
+//     if (payList[x] < lowest) {
+//       lowest = payList[x];
+//     }
+//   }
+// return highest - lowest
+
+// }
+
 function payScaleAnalyzer(payList) {
   payList.sort();
 
