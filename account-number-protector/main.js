@@ -5,7 +5,7 @@
 // The last four numbers of the credit card number with "**" as a prefix
 
 function accountNumberProtector(cardNumberString) {
-  let prefixAccNum = '************';
+  let prefixAccNum = '**';
   let last4Num = cardNumberString.slice(12);
   for (let i = 0; i < last4Num.length; i++) {
     prefixAccNum += last4Num[i];
