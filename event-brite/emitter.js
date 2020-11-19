@@ -66,11 +66,17 @@ function Emitter() {
   };
 }
 
+
+
 let myEmit = new Emitter();
+
+
 
 function logArgs(...items) {
   console.log(items);
 }
+
+
 function sumAll(...nums) {
   let result = nums.reduce((acc, cur) => acc + cur, 0);
   console.log(result);
@@ -85,5 +91,4 @@ myEmit.emit("foo", 1, 2); // sub1 and sub2 triggered
 myEmit.emit("bar", 5, 6); // sub3 triggered
 sub1.release(); // remove sub1
 myEmit.emit("foo", 1, 2); // sub2 triggered
-
-export default Emitter;
+myEmit.emit('bar', 15, 70);
