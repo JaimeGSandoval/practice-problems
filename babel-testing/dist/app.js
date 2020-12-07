@@ -37,3 +37,23 @@ var seventhHokage = new Person('Uzumaki', 'Naruto');
 seventhHokage.getName();
 seventhHokage.setName("Hatake", "Kakashi");
 seventhHokage.getName();
+
+var NINJUTSU = function () {
+  var ninjas = ['Uzumaki Naruto', 'Uchiha Sasuke', 'Haruna Sakura', 'Hatake Kakashi'];
+  var sannin = ['Jiraiya', 'Orochimaru', 'Tsunade'];
+
+  return {
+    earth: function earth() {
+      return console.log([sannin[0], ninjas[3]]);
+    },
+    lighting: function lighting() {
+      return console.log([ninjas[1], ninjas[3]]);
+    },
+    wind: function wind() {
+      return console.log([sannin[1], ninjas[0]]);
+    },
+    medical: function medical() {
+      return console.log([sannin[2], ninjas[2]]);
+    }
+  };
+}();
