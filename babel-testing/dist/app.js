@@ -44,16 +44,16 @@ var NINJUTSU = function () {
 
   return {
     earth: function earth() {
-      return console.log(['Jiraiya', 'Katake Kakashi']);
+      return console.log([sannin[0], ninjas[3]]);
     },
     lighting: function lighting() {
-      return console.log(['Uchiha Sasuke', 'Hatake Kakashi']);
+      return console.log([ninjas[1], ninjas[3]]);
     },
     wind: function wind() {
-      return console.log(['Orochimaru', 'Uzumaki Naruto']);
+      return console.log([sannin[1], ninjas[0]]);
     },
     medical: function medical() {
-      return console.log(['Tsunade', 'Haruna Sakura']);
+      return console.log([sannin[2], ninjas[2]]);
     }
   };
 }();
