@@ -3,7 +3,7 @@
 const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
 
 // Example
-hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
+// hide(document.querySelectorAll('img')); // Hides all <img> elements on the page
 
 // 2.How to check if the element has the specified class?
 
@@ -109,14 +109,14 @@ getURLParameters('google.com'); // {}
 
 // 12.How to encode a set of form elements as an object ?
 
-const formToObject = form =>
-  Array.from(new FormData(form)).reduce(
-    (acc, [key, value]) => ({
-      ...acc,
-      [key]: value
-    }),
-    {}
-  );
+// const formToObject = form =>
+//   Array.from(new FormData(form)).reduce(
+//     (acc, [key, value]) => ({
+//       ...acc,
+//       [key]: value
+//     }),
+//     {}
+//   );
 
 // Example
 formToObject(document.querySelector('#form')); // { email: 'test@email.com', name: 'Test Name' }
