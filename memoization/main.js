@@ -1,6 +1,6 @@
 // hash to store values for memoization
 const cache = {};
-const addValue = (num, val) => cache[num] = val;
+const storeResult = (num, val) => cache[num] = val;
 const square = (n) => {
   let result = 0;
   if (cache[n]) {
@@ -11,7 +11,7 @@ const square = (n) => {
       result += 1;
     }
   }
-  addValue(n, result);
+  storeResult(n, result);
   return result;
 }
 
