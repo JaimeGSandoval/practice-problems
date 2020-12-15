@@ -28,7 +28,64 @@ const square = (n) => {
   return result;
 }
 
-console.log(square(30000));
-console.log(square(30000));
-console.log(square(30000));
-console.log(square(30000));
+console.log('square', square(30000));
+console.log('square', square(30000));
+console.log('square', square(30000));
+console.log('square', square(30000));
+
+
+const aMemoizationFunc = function (parameter) {
+  'use strict';
+
+  if (!aMemoizationFunc.memoCache[parameter]) {
+    let result = {};
+    console.log('Bankai City');
+    result.parameter = parameter;
+    aMemoizationFunc.memoCache[parameter] = result;
+  }
+  return aMemoizationFunc.memoCache[parameter];
+}
+
+// Attaching an attribute name memoCache to the aMemoizationFunc function object
+aMemoizationFunc.memoCache = {};
+
+console.log(aMemoizationFunc(2000))
+console.log(aMemoizationFunc(2000))
+console.log(aMemoizationFunc(2000))
+console.log(aMemoizationFunc(2000))
+
+
+const aMemoizationFunc2 = function (par1, par2) {
+  'use strict';
+
+  let slice = Array.prototype.slice;
+  let key = JSON.stringify(slice.call(arguments));
+
+  if (!aMemoizationFunc2.memoCache[key]) {
+    let result = {};
+    console.log('Bankai City');
+    result.par1 = par1;
+    result.par2 = par2;
+    aMemoizationFunc2.memoCache[key] = result;
+  }
+  return aMemoizationFunc2.memoCache[key];
+}
+
+// Attaching an attribute name memoCache to the aMemoizationFunc function object
+aMemoizationFunc2.memoCache = {};
+
+
+let fibonacci = function () {
+  'use strict';
+  let cache = [0, 1];
+
+  let fib = function (n) {
+    let result = cache[n];
+    if (typeof result !== 'number') {
+      result = fib(n - 1) + fib(n - 2);
+      cache[n] = result;
+    }
+    return result;
+  }
+  return fib;
+}();
