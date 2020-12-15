@@ -1,4 +1,17 @@
-// hash to store values for memoization
+// A function must have heavy computation and must be a pure function in order for memoization to work
+
+// Example of pure function. It does not rely on any outside data for it to work. The input will always match the output
+const pureFunction = function (x) {
+  return x * x;
+}
+
+// Example of non pure function. It relies on outside data for it to work. In this case, the value of the var num.
+let num = 5;
+const notPureFunction = function (x) {
+  return num * x;
+}
+
+// hash named cache to store values for memoization
 const cache = {};
 const storeResult = (num, val) => cache[num] = val;
 const square = (n) => {
