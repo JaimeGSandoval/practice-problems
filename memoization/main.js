@@ -1,4 +1,4 @@
-// A function must have heavy computation and must be a pure function in order for memoization to work
+// A function must have heavy computation and must be a pure function in order for memoization to work. The value for a specific input is calculated and stored within the cache. If the same input is passed through the function again, it won't be calculated. Instead, it'll just look for the value in cache, which is must faster than doing the entire computation again.
 
 // Example of pure function. It does not rely on any outside data for it to work. The input will always match the output
 const pureFunction = function (x) {
