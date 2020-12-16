@@ -118,3 +118,64 @@ MYAPP4.utilities.array = (function () {
     indexOf: inArray
   }
 }());
+
+
+// Modules that create constructors
+
+// Set a namespace
+const MYAPP5 = {};
+
+MYAPP5.namespaceObj = function (ns_string) {
+  let parts = ns_string.split('.'),
+    parent = MYAPP5;
+
+  // remove the leading "MYAPP" global from the parts array
+  if (parts[0] === 'MYAPP5') {
+    parts = parts.slice(1);
+  }
+
+  for (let i = 0; i < parts.length; i += 1) {
+
+    // Create a property if it doesn't exist
+    if (typeof parent[parts[i]] === 'undefined') {
+      parent[parts[i]] = {};
+    }
+    parent = parent[parts[i]];
+  }
+  return parent;
+}
+
+
+
+// Create a namespace object for the module
+MYAPP5.namespaceObj('MYAPP5.utilities.array');
+
+// Create an IFEE for privacy if needed and returns an OBJECT, a MODULE with the actual public interface
+MYAPP5.utilities.Array = (function () {
+  // Private properties and methods
+  let Constr;
+
+  // Optional one time init procedures
+
+  // Public API constructor
+  Constr = function (o) {
+    this.elements = this.toArray(o);
+  };
+
+  // Public API prototype
+  Constr.prototype = {
+    constructor: MYAPP5.utilities.Array,
+    version: '2.0',
+    toArray: function (obj) {
+      for (var i = 0, a = [], len = obj.length; i < len; i += 1) {
+        a[i] = obj[i];
+      }
+      return a;
+    }
+  };
+
+  // return the constructor
+  // to be assigned to the new namespace
+  return Constr;
+
+}());
