@@ -37,7 +37,7 @@ MYAPP.modules.module2.data = { a: 3, b: 4 };
 
 const MYAPP2 = {};
 
-MYAPP2.namespace = function (ns_string) {
+MYAPP2.namespaceObj = function (ns_string) {
   let parts = ns_string.split('.'),
     parent = MYAPP2;
 
@@ -57,6 +57,8 @@ MYAPP2.namespace = function (ns_string) {
   return parent;
 }
 
-let module2 = MYAPP2.namespace('MYAPP2.modules.module2');
-MYAPP2.namespace('modules.module3');
-MYAPP2.namespace('once.upon.a.time.there.was.a.long.nested.property');
+let module2 = MYAPP2.namespaceObj('MYAPP2.modules.module2');
+MYAPP2.namespaceObj('modules.module3');
+MYAPP2.namespaceObj('modules.module4');
+MYAPP2.modules.module4.data = { name: 'Chidori;' }
+// MYAPP2.namespace('once.upon.a.time.there.was.a.long.nested.property');
