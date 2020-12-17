@@ -2,7 +2,9 @@
 
 
 // Set a namespace
-const MYAPP3 = {};
+const MYAPP3 = {
+  test_method: () => console.log('test')
+};
 
 MYAPP3.namespaceObj = function (ns_string) {
   let parts = ns_string.split('.'),
@@ -19,6 +21,7 @@ MYAPP3.namespaceObj = function (ns_string) {
     if (typeof parent[parts[i]] === 'undefined') {
       parent[parts[i]] = {};
     }
+    // if it's not undefined then it sets parent to the module with the code in it, but if it's undefined, it sets parent to an empty object/module
     parent = parent[parts[i]];
   }
   return parent;
