@@ -97,7 +97,7 @@ function Employee(firstName, lastName) {
 
 const employee = new Employee('Bruce', 'Wayne');
 
-console.log(employee.publicGetFullName());
-console.log(employee.privilegedGetFullName());
-console.log(employee.privateGetFullName());
-console.log(employee.privateFullName);
+// console.log(employee.publicGetFullName());
+// console.log(employee.privilegedGetFullName());
+// console.log(employee.privateGetFullName());
+// console.log(employee.privateFullName);

@@ -1,7 +1,7 @@
 // // Namespace Pattern
 
 // // Global object
-const MYAPP = {};
+var MYAPP = MYAPP || {};
 
 // Constructors
 MYAPP.Parent = function () {
@@ -35,7 +35,7 @@ MYAPP.modules.module2.data = { a: 3, b: 4 };
 // }
 
 
-const MYAPP2 = {};
+var MYAPP2 = MYAPP2 || {};
 
 MYAPP2.namespaceObj = function (ns_string) {
   let parts = ns_string.split('.'),
@@ -52,6 +52,8 @@ MYAPP2.namespaceObj = function (ns_string) {
     if (typeof parent[parts[i]] === 'undefined') {
       parent[parts[i]] = {};
     }
+    // parent now equals the original parent object with the new module now included.
+    // This line si setting MYAPP2 to MYAPP2 with the new modules added
     parent = parent[parts[i]];
   }
   return parent;
@@ -61,4 +63,4 @@ let module2 = MYAPP2.namespaceObj('MYAPP2.modules.module2');
 MYAPP2.namespaceObj('modules.module3');
 MYAPP2.namespaceObj('modules.module4');
 MYAPP2.modules.module4.data = { name: 'Chidori;' }
-// MYAPP2.namespace('once.upon.a.time.there.was.a.long.nested.property');
+MYAPP2.namespace('once.upon.a.time.there.was.a.long.nested.property');
