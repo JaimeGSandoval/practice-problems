@@ -23,6 +23,16 @@ seventhHokage.getName();
 seventhHokage.setName("Hatake", "Kakashi");
 seventhHokage.getName();
 
+// Example of how to add a variable to a class in ES6
+class MyClass {
+
+  // To be able to retrieve the variable from the class you need to create a getter, like below with
+  // this.constructor.bankai
+  get bankai() {
+    return this.constructor.bankai;
+  }
+}
+MyClass.bankai = 'test bankai';
 
 
 
