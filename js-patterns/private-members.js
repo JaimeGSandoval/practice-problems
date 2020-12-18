@@ -68,3 +68,36 @@ Gadget2.prototype = (function () {
 }());
 
 const tech = new Gadget2();
+
+
+// Employee example
+function Employee(firstName, lastName) {
+  // Public Fields
+  this.firstName = firstName;
+  this.lastName = lastName;
+
+  // Private field
+  let privateFullName;
+
+  // Private function
+  let privateGetFullName = function () {
+    privateFullName = firstName + " " + lastName;
+    return privateFullName;
+  }
+
+  // Privileged Function
+  this.privilegedGetFullName = function () {
+    return privateGetFullName();
+  }
+
+  Employee.prototype.publicGetFullName = function () {
+    return this.privilegedGetFullName();
+  }
+}
+
+const employee = new Employee('Bruce', 'Wayne');
+
+// console.log(employee.publicGetFullName());
+// console.log(employee.privilegedGetFullName());
+// console.log(employee.privateGetFullName());
+// console.log(employee.privateFullName);
