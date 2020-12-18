@@ -38,6 +38,14 @@ seventhHokage.getName();
 seventhHokage.setName("Hatake", "Kakashi");
 seventhHokage.getName();
 
+// Example of how to add a variable to a class in ES6
+
+var MyClass = function MyClass() {
+  _classCallCheck(this, MyClass);
+};
+
+MyClass.bankai = 'test bankai';
+
 var NINJUTSU = function () {
   var ninjas = ['Uzumaki Naruto', 'Uchiha Sasuke', 'Haruna Sakura', 'Hatake Kakashi'];
   var sannin = ['Jiraiya', 'Orochimaru', 'Tsunade'];
