@@ -63,4 +63,4 @@ let module2 = MYAPP2.namespaceObj('MYAPP2.modules.module2');
 MYAPP2.namespaceObj('modules.module3');
 MYAPP2.namespaceObj('modules.module4');
 MYAPP2.modules.module4.data = { name: 'Chidori;' }
-MYAPP2.namespace('once.upon.a.time.there.was.a.long.nested.property');
+// MYAPP2.namespace('once.upon.a.time.there.was.a.long.nested.property');
