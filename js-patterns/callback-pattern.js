@@ -1,6 +1,6 @@
 // Callback pattern
 let findNodes = function (callback) {
-  let i = 50, // big heavy loop
+  let i = 10, // big heavy loop
     nodes = [], // store the result
     found; // the next node found
 
@@ -11,7 +11,6 @@ let findNodes = function (callback) {
 
   while (i) {
     i -= 1;
-    console.log('i', i)
 
     // complex logic here...
 
