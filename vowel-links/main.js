@@ -1,14 +1,10 @@
 function vowelLinks(str) {
-  const hash = {
-    a: 'a',
-    e: 'e',
-    i: 'i',
-    o: 'o',
-    u: 'u'
-  };
-
-  const lowerStr = str.toLowerCase().split(' ');
-  lowerStr.forEach(function (word) {
-    console.log(word[word.length - 1]);
-  })
+  const words = str.split(' ');
+  const vowels = 'aeiouAEIUO'.split('');
+  for (let i = 0; i < words.length - 1; i++) {
+    if ((vowels.indexOf(words[i].slice(-1)) > -1) && (vowels.indexOf(words[i + 1][0]) > -1)) {
+      return true;
+    }
+  }
+  return false;
 }
