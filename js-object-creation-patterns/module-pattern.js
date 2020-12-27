@@ -1,5 +1,6 @@
 // Create Module Pattern
 
+"use strict";
 
 // Set a namespace
 const MYAPP3 = {
@@ -182,3 +183,29 @@ MYAPP5.utilities.Array = (function () {
   return Constr;
 
 }());
+
+
+function communication() {
+  let greet = "Hello ",
+    goodbye = "So long ";
+
+  const getGreet = function () {
+    let d = new Date();
+    if (d.toLocaleTimeString().includes('AM')) {
+      greet = "Good morning";
+    } else {
+      greet = "Hello ";
+    }
+    return greet;
+  };
+
+  const greeting = function (name) {
+    console.log(`${getGreet() + name}! Welcome to the course.`);
+  };
+
+  return {
+    greetUser: greeting
+  }
+}
+
+const COMM = communication();
