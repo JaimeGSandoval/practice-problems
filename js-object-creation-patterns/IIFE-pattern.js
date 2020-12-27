@@ -1,4 +1,6 @@
 // IIFE Pattern
+import ShoppingDataType from './module-pattern.js';
+
 (function () {
   console.log('IFEE jutsu 1');
 }());

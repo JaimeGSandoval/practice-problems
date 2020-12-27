@@ -185,14 +185,16 @@ MYAPP5.utilities.Array = (function () {
 }());
 
 
-function communication() {
+const COMM = (function () {
   let greet = "Hello ",
     goodbye = "So long ";
 
   const getGreet = function () {
+
+    // Private Methods and Properties
     let d = new Date();
-    if (d.toLocaleTimeString().includes('AM')) {
-      greet = "Good morning";
+    if (d.toLocaleTimeString().includes('PM')) {
+      greet = "Good evening, ";
     } else {
       greet = "Hello ";
     }
@@ -203,9 +205,42 @@ function communication() {
     console.log(`${getGreet() + name}! Welcome to the course.`);
   };
 
+  // Public methods and properties
   return {
     greetUser: greeting
+  };
+})();
+
+
+// Before ES6
+(function () {
+
+  // Declare private variables and methods
+
+  return {
+    // Declare public variables and/or functions
+
+  }
+
+})();
+
+
+// After ES6
+class ShoppingDataType {
+  constructor() {
+
+    // Private properties
+    this.shoppingList = ['coffee', 'chicken', 'pizza']
+  }
+
+  // Public methods
+  getShoppingList() {
+    return this.shoppingList.join(', ')
+  }
+
+  addItem(item) {
+    this.shoppingList.push(item);
   }
 }
 
-const COMM = communication();
+export default ShoppingDataType;
