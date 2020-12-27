@@ -1,5 +1,6 @@
 // Create Module Pattern
 
+"use strict";
 
 // Set a namespace
 const MYAPP3 = {
@@ -182,3 +183,64 @@ MYAPP5.utilities.Array = (function () {
   return Constr;
 
 }());
+
+
+const COMM = (function () {
+  let greet = "Hello ",
+    goodbye = "So long ";
+
+  const getGreet = function () {
+
+    // Private Methods and Properties
+    let d = new Date();
+    if (d.toLocaleTimeString().includes('PM')) {
+      greet = "Good evening, ";
+    } else {
+      greet = "Hello ";
+    }
+    return greet;
+  };
+
+  const greeting = function (name) {
+    console.log(`${getGreet() + name}! Welcome to the course.`);
+  };
+
+  // Public methods and properties
+  return {
+    greetUser: greeting
+  };
+})();
+
+
+// Before ES6
+(function () {
+
+  // Declare private variables and methods
+
+  return {
+    // Declare public variables and/or functions
+
+  }
+
+})();
+
+
+// After ES6
+class ShoppingDataType {
+  constructor() {
+
+    // Private properties
+    this.shoppingList = ['coffee', 'chicken', 'pizza']
+  }
+
+  // Public methods
+  getShoppingList() {
+    return this.shoppingList.join(', ')
+  }
+
+  addItem(item) {
+    this.shoppingList.push(item);
+  }
+}
+
+export default ShoppingDataType;

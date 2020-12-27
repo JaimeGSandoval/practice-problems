@@ -40,7 +40,7 @@ function extend(parent, child) {
 // Example of Deep Copy of another object which checks whether the property is an object or not
 
 function extendDeep(parent, child) {
-  let toStr = Object.prototype.toString(),
+  let toStr = Object.prototype.toString,
     astr = "[object Array]";
 
   child = child || {};
@@ -48,7 +48,7 @@ function extendDeep(parent, child) {
   for (let i in parent) {
     if (parent.hasOwnProperty(i)) {
       if (typeof parent[i] === "object") {
-        child[i] = (toStr(parent[i] === astr) ? [] : {});
+        child[i] = (toStr.call(parent[i] === astr) ? [] : {});
         extendDeep(parent[i] = child[i]);
       } else {
         child[i] = parent[i];
@@ -70,6 +70,6 @@ kid.counts.toString(); // "1 2 3 4"
 dad.counts.toString(); // "1, 2, 3"
 
 dad.reads === kid.reads; // false
-kid.reads.paper = false;
-kid.reads.web = true;
-dad.reads.paper; // true
+// kid.reads.paper = false;
+// kid.reads.web = true;
+// dad.reads.paper; // true
