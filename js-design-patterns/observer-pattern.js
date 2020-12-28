@@ -107,7 +107,7 @@ joe.tweet = function (msg) {
 };
 
 paper.readTweets = function (tweet) {
-  alert('Call big meeting! Someone ' + tweet);
+  console.log('Call big meeting! Someone ' + tweet);
 };
 
 joe.subscribe(paper.readTweets);

@@ -78,5 +78,5 @@ window.onkeypress = mediator.keypress;
 // game over in 30 seconds
 setTimeout(function () {
   window.onkeypress = null;
-  alert('Game over!');
+  console.log('Game over!');
 }, 30000);
