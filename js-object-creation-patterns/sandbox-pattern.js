@@ -109,8 +109,14 @@ Sandbox.prototype = {
 Sandbox.modules = {};
 
 Sandbox.modules.dom = function (box) {
-  box.getElement = function () { };
-  box.getStyle = function () { };
+  box.getElement = function () {
+    console.log('test 1');
+  };
+
+  box.getStyle = function () {
+    console.log('test 2');
+  };
+
   box.foo = 'bar';
 };
 
