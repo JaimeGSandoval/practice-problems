@@ -1,5 +1,8 @@
 "use strict";
 
+// Factory Pattern allows you to create all your objects in a centralized location so you can minimize the amount of 'new' keyword usage. Keeps code
+// clean and concise
+
 const factoryFunc = function (newNum) {
   let num = 100;
   return {
@@ -43,43 +46,43 @@ const greet3 = greeting3('What up');
 document.querySelector('button').addEventListener('click', greet3.greet);
 
 
-// Example 2
+// Example for keeping track of employees
 
-function Developer(name) {
+function DeveloperEmployee(name) {
   this.name = name;
   this.type = 'Developer';
 }
 
-function Tester(name) {
+function TesterEmployee(name) {
   this.name = name;
   this.type = 'Tester';
 }
 
-
+// Type 1 employee will be Developer.
+// Type 2 employee will be Tester
 function EmployeeFactory() {
-  this.create = (name, type) => {
+  this.createEmployee = (name, type) => {
     switch (type) {
       case 1:
-        return new Developer(name);
+        return new DeveloperEmployee(name);
         break;
       case 2:
-        return new Tester(name);
+        return new TesterEmployee(name);
         break;
     }
   }
 }
 
-
 function say() {
-  console.log('Hi, I am ' + this.name + ' and I am a ' + this.type);
+  console.log(`Hi, my name is ${this.name} and I'm a ${this.type}`);
 }
 
 const employeeFactory = new EmployeeFactory();
 const employees = [];
 
-employees.push(employeeFactory.create('Darth Vader', 1));
-employees.push(employeeFactory.create('Luke Skywalker', 2));
+employees.push(employeeFactory.createEmployee('Jaime', 1));
+employees.push(employeeFactory.createEmployee('Naruto', 2));
 
-employees.forEach(employee => {
-  say.call(employee);
-})
+employees.forEach(emp => {
+  say.call(emp);
+});
