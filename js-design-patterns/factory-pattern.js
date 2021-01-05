@@ -1,5 +1,8 @@
 "use strict";
 
+// Factory Pattern allows you to create all your objects in a centralized location so you can minimize the amount of 'new' keyword usage. Keeps code
+// clean and concise
+
 const factoryFunc = function (newNum) {
   let num = 100;
   return {
