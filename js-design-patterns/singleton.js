@@ -1,6 +1,7 @@
 "use strict";
 
 // Singleton pattern is user when you only want a single instance of a class
+// Used when you want to limit the number of instances of an object to at most 1. 
 // There are many ways to do it
 
 function Process(state) {
