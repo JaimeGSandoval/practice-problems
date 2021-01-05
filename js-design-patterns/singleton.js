@@ -31,7 +31,11 @@ const Singleton = (function () {
   }
 }());
 
+// First call of process manager goes into Singleton, calls getProcessManager() and checks to see if the pManager is null. If it's null, then we create one with 
+// createProcessManager() and set it to pManager. Now our only instance of Process Manager being stored in pManager.
 const userProcess = Singleton.getProcessManager();
+
+// Now when we call getProcessManager() again it checks to see if pManager is null. It isn't null, it's been set, so we just return pManager and stick with a single object
 const userProcess2 = Singleton.getProcessManager();
 
 
