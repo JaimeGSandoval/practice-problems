@@ -1,3 +1,15 @@
+// Decorator design pattern allows you to attach additional responsibilities to an already existing object dynamically/at run time without altering its existing structure
+// Decorators provide a flexible alternative to sub classing for extending functionality
+// Falls under the Structural Design pattern and is also known as a wrapper pattern
+
+// Decorator pattern can help when working with legacy code. It's easier to modify existing code with the decorator pattern
+
+// Implementation guidelines:
+// 1. Needs to add responsibilities to individual objects dynamically and transparently
+// 2. The extension by sub classing is impractical
+// 3. Class definition may be hidden
+// 4. Classes are unavailable for sub classing
+
 // Example 1
 
 function Sale(price) {
