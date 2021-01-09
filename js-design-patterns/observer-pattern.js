@@ -113,3 +113,52 @@ paper.readTweets = function (tweet) {
 joe.subscribe(paper.readTweets);
 
 joe.tweet("hated the paper today");
+
+
+// Example 2
+// The observer design pattern is a design pattern where you define on to many dependency relationship from one object known as the Subject to many other objects known as the Observers. These observers are ust functions which watch the subject and wait for some signal or trigger from the subject before they run. Very similar to an Event Listener. That's why the observer pattern is used when itcomes to creating event handling systems.
+
+function Subject() {
+  this.observers = []; // An Array of observer functions
+}
+
+Subject.prototype = {
+
+  // This fn parameter is an Observer function that is saying i want to subscribe to this subject so that whenever this subject sends out some signal I want to know about it so add me to your array of observers
+  subscribe: function (fn) { // fn is an Observer function
+    this.observers.push(fn);
+  },
+
+  unsubscribe: function (fnToRemove) {
+    this.observers = this.observers.filter(fn => {
+      if (fn != fnToRemove) {
+        return fn;
+      }
+    });
+  },
+
+  // fire is the function that will notify every Observer that is currently subscribed to this Subject. We do that by looping through all of our Observer functions and call them
+  fire: function () {
+    this.observers.forEach((fn) => {
+      fn.call();
+    });
+  }
+}
+
+const subject = new Subject();
+
+function Observer1() {
+  console.log('Observer 1 firing');
+};
+
+function Observer2() {
+  console.log('Observer 2 firing');
+}
+
+// Adds Observer1 & Observer2 to observers array in Subject
+subject.subscribe(Observer1);
+subject.subscribe(Observer2);
+
+subject.unsubscribe(Observer2);
+// Calls the Observer functions in the Observers array
+subject.fire();
