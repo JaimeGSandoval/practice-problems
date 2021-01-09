@@ -1,3 +1,5 @@
+// Example 1
+
 function Sale(price) {
   this.price = price || 100;
   this.decorators_list = [];
@@ -39,3 +41,89 @@ Sale.prototype.getPrice = function () {
 
   return price;
 };
+
+
+// Example 2
+
+// A vehicle constructor
+function vehicle(vehicleType) {
+  // Some defaults
+  this.vehicleType = vehicleType;
+  this.model = 'default';
+  this.license = '0000-000';
+}
+
+// Test instance for a basic vehicle
+const testInstance = new vehicle('car');
+// outputs 'vehicle {vehicleType: 'car', model: 'default', license: '0000-000'}
+console.log(testInstance);
+
+// Create a new instance of vehicle to be decorated
+let truck = new vehicle('truck');
+
+// New functionality we're decorating vehicle with
+truck.setModel = function (modelName) {
+  this.model = modelName
+};
+
+truck.setColor = function (color) {
+  this.color = color;
+};
+
+// Test the value setters and value assignment works correctly
+truck.setColor('green');
+truck.setModel('Tacoma');
+
+console.log(truck);
+
+// Demonstrate 'vehicle' is still unaltered
+const secondInstance = new vehicle('car');
+console.log(secondInstance);
+
+
+// Example 3
+
+// The constructor to decorate
+function MacBook() {
+  this.cost = function () {
+    return 997;
+  };
+  this.screenSize = function () {
+    return 11.6;
+  };
+}
+
+// Decorator 1
+function Memory(macbook) {
+  let v = macbook.cost();
+  macbook.cost = function () {
+    return v + 75;
+  }
+}
+
+// Decorator 2
+function Engraving(macbook) {
+  let v = macbook.cost();
+  macbook.cost = function () {
+    return v + 200;
+  };
+}
+
+// Decorator 3
+function Insurance(macbook) {
+  let v = macbook.cost();
+  macbook.cost = function () {
+    return v + 250;
+  };
+}
+
+const mb = new MacBook();
+Memory(mb);
+Engraving(mb);
+Insurance(mb);
+
+// outputs 1522
+console.log(mb.cost());
+
+// outputs 11.6
+console.log(mb.screenSize());
