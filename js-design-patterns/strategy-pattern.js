@@ -1,5 +1,22 @@
 // Strategy pattern is a pattern in which you encapsulate group of closely related algorithms. These algorithms are called strategies. A strategy is just a function. Strategy pattern allows you to swap different strategies easily.
 
+// Define a family of algorithms, encapsulate each one, and make them interchangeable. The Strategy pattern lets the algorithm vary independently form clients that use it.
+
+// When to use the Strategy pattern?
+// When you ant to define a class that will have one behavior that's similar to other behaviors in a list/ When you need to sue one of several behaviors dynamically
+// Often reduces long lists of conditionals
+// Avoids duplicate code
+// Keeps changes from forcing other class changes
+// Can hide complicated/ secret code from the user
+// Negative: Increased number of objects/classes
+
+// Example: I want the class object to be able to choose from :
+// Not flying
+// Fly with wings
+// Fly super fast
+
+//
+
 function FedEx() {
   this.calculate = package => {
     return 2.45;
