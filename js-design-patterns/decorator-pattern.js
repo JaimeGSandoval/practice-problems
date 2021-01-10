@@ -54,6 +54,7 @@ Sale.prototype.getPrice = function () {
   return price;
 };
 
+const sold = new Sale(200);
 
 // Example 2
 
