@@ -1,3 +1,6 @@
+// the Mediator pattern allows you to define an object known as the mediator that encapsulates and controls how some set of objects interact with each other. Instead of having multiple objects interacting and send messages to each other, the mediator object takes those messages and handles any complex logic and routing to decide where these messages need to go. Good example of using a mediator pattern is a chat room.
+
+// Example 1
 
 // player constructor
 function Player(name) {
@@ -80,3 +83,53 @@ setTimeout(function () {
   window.onkeypress = null;
   console.log('Game over!');
 }, 30000);
+
+
+// ////////// Example 2
+
+function Member(name) {
+  this.name = name;
+  this.chatroom = null;
+}
+
+Member.prototype = {
+  send: function (message, toMember) {
+    // here 'this' represents the current member sending the message
+    this.chatroom.send(message, this, toMember);
+  },
+  receive: function (message, fromMember) {
+    // 'this.name' is the current member
+    console.log(`${fromMember.name} to ${this.name}: ${message}`)
+  }
+}
+
+// Mediator object
+function ChatroomMediatorObj() {
+  this.members = {};
+}
+
+ChatroomMediatorObj.prototype = {
+  addMember: function (member) {
+    // creating a new property in the members object. It uses the name of the member we want to add as a key
+    this.members[member.name] = member;
+    // Need to set this member's chatroom to equal this chatroom. Previously it was null
+    member.chatroom = this;
+  },
+  send: function (message, fromMember, toMember) {
+    toMember.receive(message, fromMember);
+  }
+}
+
+const chat = new ChatroomMediatorObj();
+
+const bob = new Member('Bob');
+const john = new Member('John');
+const tim = new Member('Tim');
+
+chat.addMember(bob);
+chat.addMember(john);
+chat.addMember(tim);
+
+bob.send('Hey, John', john);
+john.send('What\'s up, Bob', bob);
+tim.send('Whaat up, john', john);
