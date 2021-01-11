@@ -64,3 +64,11 @@ const questions = [
 printQuiz(questions);
 
 // When you see those big switch statements or big if statements, always realize that your almost always violating the open closed principle and you should always refactor that code to use for example classes, or functions, or modules, something that breaks out that logic into individual classes or functions that have the logic in them, and then that crazy switch statement can be broken down into one single function call
+
+// IMPLEMENTATION GUIDELINES
+// - The simplest way to apply open closed principle is to implement the new functionality on new derived classes
+// - Allow clients to access the original class with abstract interface
+
+// Software elements (classes, modules, functions, etc) should be open for extension but closed for modification
+
+// You should build your classes in a way that you can extend them via child classes and inheritance. Once you've created the class, you no longer need to be changed
