@@ -1,3 +1,13 @@
+// INTERFACE SEGREGATION PRINCIPLE
+
+// The entire idea is to segregate your interfaces and making them smaller. Still applicable to JavaScript even though it doesn't use interfaces. The way you do it in javascript is by using classes and inheritance instead of using interfaces. You want to break apart the larger class into smaller  components that you can add to individual classes as you need.
+
+// You want to break out your larger classes into smaller components. You can just assign the components to the different classes prototypes.
+
+//This makes it so that each of our objects and each of our classes only ever implements the information that it can actually use. It doesn't implement anything else that it can't use. This is crucial the main point to the interface segregation principle
+
+
+
 class Entity {
   constructor(name) {
     this.name = name;
