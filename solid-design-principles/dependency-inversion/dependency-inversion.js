@@ -18,8 +18,8 @@ class StripePaymentProcessor {
     this.stripe = new Stripe(user);
   }
 
-  pay(amountToDollars) {
-    this.stripe.makePayment(amountToDollars);
+  pay(amountToCents) {
+    this.stripe.makePayment(amountToCents);
   }
 }
 
