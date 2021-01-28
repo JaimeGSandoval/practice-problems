@@ -1,3 +1,17 @@
+/*
+Create Emitter class
+Create a class/function that returns an Emitter object.
+This object allows us to subscribe to an event and execute a callback
+whenever that event is triggered.
+The emit function will trigger all functions subscribed to an event and passes
+all supplied arguments.
+
+A callback can be removed from being subscribed to an event.
+
+functions - subscribe(eventName, cb), emit(eventName, args)
+subscribe - returns 'release functionality'
+*/
+
 function Emitter() {
   //key = event name
   //val = array of subscribers to that event
