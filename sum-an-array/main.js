@@ -15,3 +15,11 @@ function sumArray(array) {
 sumArray(numbersArray);
 sumArray(numbersArray2);
 sumArray(numbersArray3);
+
+const sumArray2 = (array) => {
+  array = array || [];
+  return array
+    .sort((a, b) => a - b)
+    .slice(1, -1)
+    .reduce((a, b) => (a += b), 0);
+};
