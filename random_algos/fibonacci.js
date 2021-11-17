@@ -1,15 +1,28 @@
-const fib = (num) => {
-  let fib = [];
+// const fib = (num) => {
+//   let fib = [];
 
-  fib[0] = 0;
-  fib[1] = 1;
+//   fib[0] = 0;
+//   fib[1] = 1;
+//   for (let i = 2; i <= num; i++) {
+//     // Next fibonacci number = previous + one before previous
+//     fib[i] = fib[i - 2] + fib[i - 1];
+//     console.log(fib[i]);
+//   }
+
+//   return fib[fib.length - 1];
+// };
+
+// how to do it without an array
+const fib = (num) => {
+  let numBeforePrevVal = 0;
+  let prevVal = 1;
+
   for (let i = 2; i <= num; i++) {
-    // Next fibonacci number = previous + one before previous
-    fib[i] = fib[i - 2] + fib[i - 1];
-    console.log(fib[i]);
+    prevVal = prevVal + numBeforePrevVal; // 1 2 3 5 8 13 21
+    numBeforePrevVal = prevVal - numBeforePrevVal; // 1 1 2 3 5 8 13
   }
 
-  return fib[fib.length - 1];
+  return prevVal;
 };
 
 console.log(fib(8));
