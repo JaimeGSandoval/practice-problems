@@ -1,4 +1,7 @@
-// const fib = (num) => {
+// "Why do we start the loop at 2 instead of 0?".
+// The answer is simple - because for n equal to 0 or 1, we can return that number, because as we already know - F(0) = 0, F(1) = 1.
+
+// const fib1 = (num) => {
 //   let fib = [];
 
 //   fib[0] = 0;
@@ -13,19 +16,40 @@
 // };
 
 // how to do it without an array
-const fib = (num) => {
-  let numBeforePrevVal = 0;
-  let prevVal = 1;
+// const fib2 = (num) => {
+//   let numBeforePrevVal = 0;
+//   let prevVal = 1;
 
-  for (let i = 2; i <= num; i++) {
-    prevVal = prevVal + numBeforePrevVal; // 1 2 3 5 8 13 21
-    numBeforePrevVal = prevVal - numBeforePrevVal; // 1 1 2 3 5 8 13
+//   for (let i = 2; i <= num; i++) {
+//     prevVal = prevVal + numBeforePrevVal; // 1 2 3 5 8 13 21
+//     numBeforePrevVal = prevVal - numBeforePrevVal; // 1 1 2 3 5 8 13
+//   }
+
+//   return prevVal;
+// };
+
+const fib3 = (len) => {
+  const result = [0, 1];
+  let num1 = result[0];
+  let num2 = result[1];
+  let next;
+  let count = 2;
+
+  while (count <= len) {
+    next = num1 + num2;
+    num1 = num2;
+    num2 = next;
+    count++;
+
+    result.push(next);
   }
 
-  return prevVal;
+  return result;
 };
 
-console.log(fib(8));
+// console.log(fib1(8));
+// console.log(fib2(8));
+console.log(fib3(15));
 // i = 2
 // 0 + 1 = 1
 // fib[0, 1].push(1)
